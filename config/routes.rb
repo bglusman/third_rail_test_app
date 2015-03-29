@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/about" => "about#index"
   get "/random" => "random#index"
   mount ThirdRail::Engine  => "/"
-
+  root :to => redirect('/about')
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
