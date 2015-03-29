@@ -1,5 +1,5 @@
 class RandomController < ApplicationController
-  # layout 'volt'
+  layout 'volt'
   def index
   end
 

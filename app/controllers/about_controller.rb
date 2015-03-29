@@ -1,5 +1,5 @@
 class AboutController < ApplicationController
-  # layout 'volt'
+  layout 'volt'
   def index
   end
 
