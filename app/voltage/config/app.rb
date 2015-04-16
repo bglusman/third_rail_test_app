@@ -1,10 +1,22 @@
+# Opal::Processor.source_map_enabled = true
 Volt.configure do |config|
   # Setup your global app config here.
 
   # Your app secret is used for signing things like the user cookie so it can't
   # be tampered with.  A random value is generated on new projects that will work
   # without the need to customize.  Make sure this value doesn't leave your server.
-  config.app_secret = 'Tifx0QF1HH1b6ERs_1pMGtL0qdzxD6qjmCsE8e9mJl5bDghx8fyBpUA6kF3OtubOQtQ'
+  #
+  # For added security we reccomend moving the app secret into an enviromnet.  You can
+  # setup that like so:
+  #
+  # config.app_secret = ENV['APP_SECRET']
+  #
+  config.app_secret = 'X2dhOHj9C22HFYhpUawozBDy0JGy-MvRXgrG-Q5ZqP_Ocp0YvBFML-2Iny-Tur1fxZk'
+
+  # Data updates from the client come in via Tasks.  The task dispatcher logs all calls to tasks.
+  # By default hashes in the arguments can be filtered based on keys.  So any hash with a key of
+  # password will be filtered.  You can add more fields to filter below:
+  config.filter_keys = [:password]
 
   # Database config all start with db_ and can be set either in the config
   # file or with an environment variable (DB_NAME for example).
